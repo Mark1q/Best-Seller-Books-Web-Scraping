@@ -47,18 +47,6 @@ puppeteer.launch({ headless: 'new' }).then(async (browser) => {
             const author = funInnerText(document.querySelector('[itemprop=author]'));
             const imageLink = document.querySelector('[itemprop=image]').getAttribute('src');
 
-            /*let status = null;
-
-            if(document.getElementsByClassName('text-accent').length != 0){
-                status = document.getElementsByClassName('text-accent')[1].;
-            }
-
-            let variantStatus = document.getElementById('variant-availability-label').;
-            if(variantStatus == status){
-                variantStatus = null;
-            }*/
-           
-
             const textDescription = funInnerText(document.querySelector('[itemprop=description]'));
             const description = textDescription.slice(textDescription.indexOf('\n') + 2);
 
@@ -67,10 +55,6 @@ puppeteer.launch({ headless: 'new' }).then(async (browser) => {
             const bisacCategoriesArray = bisacTextParsed.split('\n');
 
             const aboutAuthor = funInnerText(Array.from(document.getElementsByClassName("space-y-4 show-lists"))[0]);
-
-            /*if( document.getElementsByClassName("space-y-4 show-lists").length != 0){
-                aboutAuthor = document.getElementsByClassName("space-y-4 show-lists")[0].;
-            }*/
             
             let reviews = null;
             let reviewsArray = [];
@@ -188,14 +172,3 @@ puppeteer.launch({ headless: 'new' }).then(async (browser) => {
 
   return arr;
 }).then(console.log)
-
-/*let status = null;
-
-            if(document.getElementsByClassName('text-accent').length != 0){
-                status = document.getElementsByClassName('text-accent')[1].;
-            }
-
-            let variantStatus = document.getElementById('variant-availability-label').;
-            if(variantStatus == status){
-                variantStatus = null;
-            }*/
